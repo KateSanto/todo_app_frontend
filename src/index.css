@@ -12,8 +12,13 @@ code {
     monospace;
 }
 
+.taskBreak {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 2px solid grey;
+}
 
-body {
+/* body {
   background-color: white;
 }
 
@@ -33,4 +38,4 @@ background-color: cornsilk;
   background-color: palegreen;
   border-radius: 10px;
   text-align: center;
-}
+} */

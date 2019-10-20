@@ -3,17 +3,17 @@ import React from 'react';
 class Task extends React.Component {
  render() {
      return (
-         <div className="row">
-             <div className="col-8">
-                 {this.props.taskDescription}
-             </div>
-             <div className="col-2">
-                 DONE
-             </div>
-             <div className="col-2">
-                 DELETE
-             </div>
-         </div>
+        <div class="row taskBreak">
+        <div class="col-8 green">
+        {this.props.taskDescription}
+        </div>
+        <div class="col-2 button">
+            <button type="button" class="btn btn-success">Done</button>
+        </div>
+        <div class="col-2 green">
+            <button type="button" class="btn btn-danger">Delete</button>
+        </div>
+    </div>
      );
  }
 }
