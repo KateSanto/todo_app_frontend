@@ -3,7 +3,13 @@ import React from 'react';
 class Header extends React.Component {
  render() {
      return (
-         <h1>Get stuff done</h1>
+        <div class="row">
+        <div class="col-12 green">
+        {this.props.headerDescription}
+        </div>
+    </div>
+        
+        //  <h1>Get stuff done</h1>
      );
  }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Task extends React.Component {
+class ActiveTask extends React.Component {
  render() {
      return (
         <div class="row taskBreak">
@@ -18,4 +18,4 @@ class Task extends React.Component {
  }
 }
 
-export default Task;
+export default ActiveTask;
