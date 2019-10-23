@@ -3,8 +3,8 @@ import React from 'react';
 class Header extends React.Component {
     render() {
         return (
-            <div class="row">
-                <div class="col-12 green">
+            <div className="row">
+                <div className="col-12 green">
                     {this.props.headerDescription}
                 </div>
             </div>

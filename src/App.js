@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
+import './index.css';
 import Header from './components/Header';
-import Newtask from './components/Newtask'
+import Newtask from './components/Newtask';
 import ActiveTask from './components/ActiveTask';
 import CompletedTask from './components/CompletedTask';
 
