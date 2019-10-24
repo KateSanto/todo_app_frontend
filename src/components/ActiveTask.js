@@ -2,6 +2,7 @@ import React from 'react';
 
 class ActiveTask extends React.Component {
     render() {
+        
         return (
             <div className="row taskBreak">
                 <div className="col-8 green">

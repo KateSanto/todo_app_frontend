@@ -5,6 +5,37 @@ import Newtask from './components/Newtask';
 import ActiveTask from './components/ActiveTask';
 import CompletedTask from './components/CompletedTask';
 
+class App extends React.Component {
+
+  render() {
+    const tasks = [{
+      id: 1,
+      description: "Buy milk",
+      completed: false
+    },
+    {
+      id: 2,
+      description: "Fill up laundry detergent",
+      completed: false
+    },
+    {
+      id: 3,
+      description: "Buy wood shavings",
+      completed: false
+    }
+  
+    ];
+    return (
+      <div>
+        {
+          tasks.map(function(task, index) {
+            return <activeTask task={task} key={index} />;
+          })
+        }
+      </div>
+    );
+}
+}
 function App() {
   return (
     <div className="container">
