@@ -1,6 +1,10 @@
 import React from 'react';
 
 class Newtask extends React.Component {
+    addingTask = () => {
+        alert("Hello Kate");
+        }
+    
     render() {
         return (
             <div className="row">
@@ -8,7 +12,7 @@ class Newtask extends React.Component {
                     <input className="form-control" type="text" placeholder="New task..." />
                 </div>
                 <div className="col-2 button">
-                    <button type="button" className="btn btn-primary">Add</button>
+                    <button type="button" className="btn btn-primary" onClick={this.addingTask}>Add</button>
                 </div>
             </div>
         );
