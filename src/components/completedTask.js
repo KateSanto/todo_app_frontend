@@ -1,6 +1,6 @@
 import React from 'react';
 
-class CompletedTask extends React.Component {
+class completedTask extends React.Component {
     render() {
         return (
             <div className="row taskBreak">
@@ -15,4 +15,4 @@ class CompletedTask extends React.Component {
     }
 }
 
-export default CompletedTask;
+export default completedTask;
