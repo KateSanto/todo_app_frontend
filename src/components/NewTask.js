@@ -1,20 +1,20 @@
 import React from 'react';
 
-class Newtask extends React.Component {
+class NewTask extends React.Component {
     state = {
-        newTaskDescription: ""
+        taskDescription: ""
     }
 
-    Newtask = () => {
+    newTask = () => {
         const task = {
             id: 1,
-            taskDescription: this.state.newTaskDescription,
+            taskDescription: this.state.taskDescription,
             completed: false
         }
 
-        this.props.Newtask(this.taskDescription);
+        this.props.addedTask(task);
 
-        this.setState({ taskDescription: "" });
+        this.setState({taskDescription: "" });
     }
 
     taskDescriptionChanged = (event) => {
@@ -22,7 +22,7 @@ class Newtask extends React.Component {
 
         taskDescription = event.target.value;
 
-        this.setState({ taskDescription });
+        this.setState({taskDescription});
     }
 
     render() {
@@ -32,11 +32,11 @@ class Newtask extends React.Component {
                     <input className="form-control" type="text" placeholder="New task..." value={this.state.taskDescription} onChange={this.taskDescriptionChanged} />
                 </div>
                 <div className="col-2 button">
-                    <button type="button" className="btn btn-primary" onClick={this.addingTask}>Add</button>
+                    <button type="button" className="btn btn-primary" onClick={this.newTask}>Add</button>
                 </div>
             </div>
         );
     }
 }
 
-export default Newtask;
+export default NewTask;
