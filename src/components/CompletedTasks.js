@@ -5,8 +5,8 @@ class CompletedTasks extends React.Component {
         return (
             <div className="row taskBreak">
                 <div className="col-10 green">
-                {this.props.completedTaskDescription}
-                    </div>
+                    {this.props.completedTaskDescription}
+                </div>
                 <div className="col-2 button">
                     <button type="button" className="btn btn-primary">Activate</button>
                 </div>

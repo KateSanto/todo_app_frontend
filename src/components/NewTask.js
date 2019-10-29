@@ -14,7 +14,7 @@ class NewTask extends React.Component {
 
         this.props.addedTask(task);
 
-        this.setState({taskDescription: "" });
+        this.setState({ taskDescription: "" });
     }
 
     taskDescriptionChanged = (event) => {
@@ -22,7 +22,7 @@ class NewTask extends React.Component {
 
         taskDescription = event.target.value;
 
-        this.setState({taskDescription});
+        this.setState({ taskDescription });
     }
 
     render() {
