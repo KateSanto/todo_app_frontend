@@ -1,4 +1,6 @@
 import React from 'react';
+const uuidv4 = require('uuid/v4');
+
 
 class NewTask extends React.Component {
     state = {
@@ -7,7 +9,7 @@ class NewTask extends React.Component {
 
     newTask = () => {
         const task = {
-            id: 1,
+            id: uuidv4(),
             taskDescription: this.state.taskDescription,
             completed: false
         }
