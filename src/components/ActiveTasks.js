@@ -10,9 +10,7 @@ class ActiveTasks extends React.Component {
         return (
             <div>
                 {this.props.tasks.map((task, index) => {
-                    return <Task deleteTaskFunc={this.props.deleteTaskFunc} task={task} key={index}
-
-                    />;
+                    return <Task deleteTaskFunc={this.props.deleteTaskFunc} task={task} key={index} markTaskAsCompleted={this.props.markTaskAsCompleted}/>;
                 })}
             </div>
         );

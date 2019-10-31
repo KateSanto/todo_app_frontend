@@ -8,8 +8,6 @@ class Header extends React.Component {
                     {this.props.headerDescription}
                 </div>
             </div>
-
-            //  <h1>Get stuff done</h1>
         );
     }
 }
