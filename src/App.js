@@ -21,6 +21,14 @@ class App extends React.Component {
     this.setState({ tasks });
   }
 
+  deleteTask = (taskId) => {
+    let tasks = this.state.tasks;
+    let tasksToKeep = tasks.filter(function (task) {
+      return task.id !== taskId;
+
+    });
+this.setState({tasks: tasksToKeep})
+  }
 
   render() {
     return (
@@ -28,7 +36,7 @@ class App extends React.Component {
         <h1><Header headerDescription="Get stuff done" /></h1>
         <NewTask addedTask={this.addNewTask} />
         <h2><Header headerDescription="Active tasks" /></h2>
-        <ActiveTasks tasks={this.state.tasks} />
+        <ActiveTasks tasks={this.state.tasks} deleteTaskFunc={this.deleteTask}/>
         <h2><Header headerDescription="Completed tasks" /></h2>
         <CompletedTasks tasks={this.state.tasks} />
       </div>
