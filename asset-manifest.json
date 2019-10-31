@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/todo_app_frontend/static/css/main.4d5eb024.chunk.css",
+    "main.js": "/todo_app_frontend/static/js/main.f97ebcc5.chunk.js",
+    "main.js.map": "/todo_app_frontend/static/js/main.f97ebcc5.chunk.js.map",
+    "runtime-main.js": "/todo_app_frontend/static/js/runtime-main.055414d6.js",
+    "runtime-main.js.map": "/todo_app_frontend/static/js/runtime-main.055414d6.js.map",
+    "static/js/2.113faf43.chunk.js": "/todo_app_frontend/static/js/2.113faf43.chunk.js",
+    "static/js/2.113faf43.chunk.js.map": "/todo_app_frontend/static/js/2.113faf43.chunk.js.map",
+    "index.html": "/todo_app_frontend/index.html",
+    "precache-manifest.f3b05a21a42a926c4933f64b8b41fd00.js": "/todo_app_frontend/precache-manifest.f3b05a21a42a926c4933f64b8b41fd00.js",
+    "service-worker.js": "/todo_app_frontend/service-worker.js",
+    "static/css/main.4d5eb024.chunk.css.map": "/todo_app_frontend/static/css/main.4d5eb024.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.055414d6.js",
+    "static/js/2.113faf43.chunk.js",
+    "static/css/main.4d5eb024.chunk.css",
+    "static/js/main.f97ebcc5.chunk.js"
+  ]
+}
