@@ -40,3 +40,8 @@ code {
   padding-bottom: 10px;
   border-top: 2px solid grey;
 }
+
+.completedTasks {
+  opacity: 0.7;
+  background-color: gray;
+}

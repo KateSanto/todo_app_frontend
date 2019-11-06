@@ -27,11 +27,11 @@ class App extends React.Component {
       return task.id !== taskId;
 
     });
-this.setState({tasks: tasksToKeep})
+    this.setState({ tasks: tasksToKeep })
   }
 
   markTaskAsCompleted = (taskId) => {
-    const updatedTasks = this.state.tasks.map(function(task) {
+    const updatedTasks = this.state.tasks.map(function (task) {
       if (task.id === taskId) {
         task.completed = true
       }
@@ -39,6 +39,16 @@ this.setState({tasks: tasksToKeep})
     });
 
     this.setState({ tasks: updatedTasks })
+  }
+
+  markTaskAsActive = (taskId) => {
+    const activeTasks = this.state.tasks.map(function (task) {
+      if (task.id === taskId) {
+        task.completed = false
+      }
+      return task
+    });
+    this.setState({ tasks: activeTasks })
   }
 
   render() {
@@ -58,10 +68,15 @@ this.setState({tasks: tasksToKeep})
       <div className="container">
         <h1><Header headerDescription="Get stuff done" /></h1>
         <NewTask addedTask={this.addNewTask} />
-        <h2><Header headerDescription="Active tasks" /></h2>
-        <ActiveTasks tasks={incompleteTasks} deleteTaskFunc={this.deleteTask} markTaskAsCompleted={this.markTaskAsCompleted}/>
-        <h2><Header headerDescription="Completed tasks" /></h2>
-        <CompletedTasks tasks={completedTasks} />
+        {incompleteTasks.length >= 1 &&
+          <h2><Header headerDescription="Active tasks" /></h2>
+        }
+        <ActiveTasks tasks={incompleteTasks} deleteTaskFunc={this.deleteTask} markTaskAsCompleted={this.markTaskAsCompleted} />
+        {completedTasks.length >= 1 &&
+          
+          <h2><Header headerDescription="Completed tasks" completedTasks/></h2>
+        }
+        <CompletedTasks tasks={completedTasks} markTaskAsActive={this.markTaskAsActive} />
       </div>
     );
   }

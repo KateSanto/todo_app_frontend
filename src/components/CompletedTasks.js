@@ -1,5 +1,5 @@
 import React from 'react';
-import Task from './Task';
+import CompletedTask from './CompletedTask';
 
 /*Tasks move to CompletedTasks.js correctly now, but they keep the format from Task.js. 
 I think I need a new component CompletedTask.js with a similar structure to Task.js. rows and cols will live there.
@@ -11,18 +11,15 @@ Then, in CompletedTasks.js, I'll have a similar structure to that in ActiveTasks
 class CompletedTasks extends React.Component {
     render() {
         return (
-            <div className="row taskBreak">
-                <div className="col-10 green">
-                    {this.props.tasks.map((task, index) => {
-                        return <Task task={task.taskDescription} key={index} />
-                    })}
-                </div>
-                <div className="col-2 button">
-                    <button type="button" className="btn btn-primary">Activate</button>
-                </div>
-            </div>
+            <div>
+            {this.props.tasks.map((task, index) => {
+                return <CompletedTask markTaskAsActive={this.props.markTaskAsActive} task={task} key={index} />;
+            })}
+        </div>
         );
     }
 }
+
+
 
 export default CompletedTasks;

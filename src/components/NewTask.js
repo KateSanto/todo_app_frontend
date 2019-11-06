@@ -30,7 +30,7 @@ class NewTask extends React.Component {
     render() {
         return (
             <div className="row">
-                <div className="col-10 green">
+                <div className="col-9 green">
                     <input className="form-control" type="text" placeholder="New task..." value={this.state.taskDescription} onChange={this.taskDescriptionChanged} />
                 </div>
                 <div className="col-2 button">
