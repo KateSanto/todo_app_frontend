@@ -4,7 +4,7 @@ This is the front end of a to-do application, built throughout the [Tech Returne
 
 The hosted version of the application is available here: https://katesanto.github.io/todo_app_frontend/
 
-## Technology Used
+## Technology used
 
 This app uses the following technology:
 
