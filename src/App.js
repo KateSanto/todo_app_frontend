@@ -74,7 +74,7 @@ class App extends React.Component {
         <ActiveTasks tasks={incompleteTasks} deleteTaskFunc={this.deleteTask} markTaskAsCompleted={this.markTaskAsCompleted} />
         {completedTasks.length >= 1 &&
           
-          <h2><Header headerDescription="Completed tasks" completedTasks/></h2>
+          <h2><Header headerDescription="Completed tasks" /></h2>
         }
         <CompletedTasks tasks={completedTasks} markTaskAsActive={this.markTaskAsActive} />
       </div>

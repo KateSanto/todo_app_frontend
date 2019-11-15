@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  
 }
 
 .App-logo {
@@ -28,6 +29,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  text-align: center;
 }
 
 code {
@@ -35,13 +38,16 @@ code {
     monospace;
 }
 
+.container {
+  background-image: linear-gradient(orange, white);
+}
+
 .taskBreak {
   padding-top: 10px;
   padding-bottom: 10px;
   border-top: 2px solid grey;
+  text-align: left;
 }
 
-.completedTasks {
-  opacity: 0.7;
-  background-color: gray;
-}
+
+
