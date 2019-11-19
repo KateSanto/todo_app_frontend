@@ -17,7 +17,7 @@ SELECT * FROM user;
 |      2 | Sofia | Herranz |
 +--------+-------+---------+
 
-
+ 
 
 CREATE TABLE task (id VARCHAR(50), taskDescription VARCHAR(100), completed VARCHAR(20), creationDate DATE, userId BIGINT(20), PRIMARY KEY (id));
 

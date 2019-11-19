@@ -18,14 +18,12 @@ class Task extends React.Component {
           {this.props.task.taskDescription}
         </div>
         <div className="col-2 button">
-          <button type="button" className="btn btn-success" onClick={this.completeTask}><span className="glyphicon glyphicon-ok" aria-hidden="true"></span>Done</button>
-          {/* <button type="button" class="btn btn-success px-3"><i class="far fa-thumbs-up" aria-hidden="true"></i></button> */}
+          <button type="button" className="btn btn-danger" onClick={this.deleteTask}><span className="fas fa-trash-alt" aria-hidden="true"></span></button>
+        </div>
+        <div className="col-2 button">
+          <button type="button" className="btn btn-success" onClick={this.completeTask}><span className="fas fa-check" aria-hidden="true"></span></button>
+        </div>
 
-        </div>
-        <div className="col-2 green">
-          <button type="button" className="btn btn-danger" onClick={this.deleteTask}
-          >Delete</button>
-        </div>
       </div>
     );
   }

@@ -7,6 +7,7 @@ import CompletedTasks from './components/CompletedTasks';
 
 
 
+
 class App extends React.Component {
   state = {
     tasks: []
@@ -66,7 +67,11 @@ class App extends React.Component {
 
     return (
       <div className="container">
-        <h1><Header headerDescription="Get stuff done" /></h1>
+        <div id="banner">
+            <div class="content">
+              <h1>Get stuff done</h1>
+            </div>
+          </div>
         <NewTask addedTask={this.addNewTask} />
         {incompleteTasks.length >= 1 &&
           <h2><Header headerDescription="Active tasks" /></h2>

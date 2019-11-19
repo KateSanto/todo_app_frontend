@@ -22,6 +22,7 @@
   color: #09d3ac;
 }
 
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -30,6 +31,26 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   
+  text-align: center;
+}
+
+#banner {
+  background-image: url("https://s3.amazonaws.com/codecademy-content/courses/web-101/unit-6/htmlcss1-img_tahoe.jpeg"); /*trying to use different image, saved it in Documents, but it doesn't pick it up. Need to find out why*/
+  background-size: cover;
+  background-position: bottom center;
+  height: 150px;
+  width: auto;
+  padding-bottom: 100px;
+  /* transform:rotate(90deg) ONCE I GET THE APP TO PICK UP MY IMAGE, I WANT TO ROTATE IT 90 DEGREES. USE THAT CODE TO DO THIS */
+}
+#banner .content h1 {
+  /* border: 3px solid white; DON'T THINK I NEED THIS BORDER, BUT DEPENDS ON HOW IT LOOKS ONCE I MANAGE TO GET MY IMAGE TO WORK */
+  color: white;
+  border-radius: 20px;
+  position: relative;
+  top: 100px;
+  width: auto;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -47,6 +68,10 @@ code {
   padding-bottom: 10px;
   border-top: 2px solid grey;
   text-align: left;
+}
+
+.new {
+  padding-top: 25px;
 }
 
 
