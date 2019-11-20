@@ -35,13 +35,15 @@ body {
 }
 
 #banner {
-  background-image: url("https://s3.amazonaws.com/codecademy-content/courses/web-101/unit-6/htmlcss1-img_tahoe.jpeg"); /*trying to use different image, saved it in Documents, but it doesn't pick it up. Need to find out why*/
+  opacity: 1;
+  background-image: url("./BannerImage.jpg");
   background-size: cover;
   background-position: bottom center;
   height: 150px;
   width: auto;
   padding-bottom: 100px;
-  /* transform:rotate(90deg) ONCE I GET THE APP TO PICK UP MY IMAGE, I WANT TO ROTATE IT 90 DEGREES. USE THAT CODE TO DO THIS */
+  margin: 0;
+  transform: scale(1.1);
 }
 #banner .content h1 {
   /* border: 3px solid white; DON'T THINK I NEED THIS BORDER, BUT DEPENDS ON HOW IT LOOKS ONCE I MANAGE TO GET MY IMAGE TO WORK */
@@ -50,7 +52,7 @@ body {
   position: relative;
   top: 100px;
   width: auto;
-  margin: 0 auto;
+  margin: 0;
   text-align: center;
 }
 

@@ -5,15 +5,17 @@ const uuidv4 = require('uuid/v4');
 class NewTask extends React.Component {
     state = {
         taskDescription: "",
-        creationDate: ""
+        // creationDate: ""
     }
+
+    //lookup 'moment' library for due date thing
 
     newTask = () => {
         const task = {
             id: uuidv4(),
             taskDescription: this.state.taskDescription,
             completed: false,
-            creationDate: new Date
+            // creationDate: new Date
         }
 
         this.props.addedTask(task);
