@@ -31,7 +31,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   
-  text-align: center;
+  text-align: left;
 }
 
 .banner {
@@ -45,8 +45,8 @@ body {
   padding-bottom: 100px;
   margin: 0;
   transform: scale(1.1);
-  z-index: -3;
-  position:relative;
+  /* z-index: -3;
+  position:relative; */
 }
 .content {
   /* border: 3px solid white; */
@@ -56,7 +56,6 @@ body {
   width: auto;
   margin: 5px;
   text-align: left;
-  z-index: 2;
   position:relative;
   background-image: grey;
 }
@@ -66,10 +65,8 @@ code {
     monospace;
 }
 
-.container {
+.container-styles {
   background-image: linear-gradient(orange, white);
-  z-index: -2;
-  position:relative;
 }
 
 .taskBreak {

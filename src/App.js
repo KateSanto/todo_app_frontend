@@ -66,7 +66,7 @@ class App extends React.Component {
     });
 
     return (
-      <div className="container">
+      <div className="container container-styles">
         
         <div className="banner">
         <div className="content">
