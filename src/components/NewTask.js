@@ -4,7 +4,7 @@ const uuidv4 = require('uuid/v4');
 
 class NewTask extends React.Component {
     state = {
-        taskDescription: "",
+        taskDescription: ""
         // creationDate: ""
     }
 
@@ -14,7 +14,7 @@ class NewTask extends React.Component {
         const task = {
             id: uuidv4(),
             taskDescription: this.state.taskDescription,
-            completed: false,
+            completed: false
             // creationDate: new Date
         }
 
@@ -38,10 +38,7 @@ class NewTask extends React.Component {
                     <input className="form-control" type="text" placeholder="New task..." value={this.state.taskDescription} onChange={this.taskDescriptionChanged}/>
                 </div>
                 <div className="col-2 button">
-                    <button type="button" className="btn btn-primary" onClick={this.newTask}><span className="fas fa-plus" aria-hidden="true"></span></button>
-
-    
-
+                    <button type="button" className="btn btn-primary" onClick={this.newTask} onSubmit={this.newTask}><span className="fas fa-plus" aria-hidden="true"></span></button>
 
                 </div>
             </div>

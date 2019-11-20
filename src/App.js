@@ -67,8 +67,9 @@ class App extends React.Component {
 
     return (
       <div className="container">
-        <div id="banner">
-            <div class="content">
+        
+        <div className="banner">
+        <div className="content">
               <h1>Get stuff done</h1>
             </div>
           </div>

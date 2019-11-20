@@ -34,26 +34,31 @@ body {
   text-align: center;
 }
 
-#banner {
-  opacity: 1;
+.banner {
+  /* opacity: 0.8; */
   background-image: url("./BannerImage.jpg");
   background-size: cover;
   background-position: bottom center;
+  rotate: 90deg;
   height: 150px;
   width: auto;
   padding-bottom: 100px;
   margin: 0;
   transform: scale(1.1);
+  z-index: -3;
+  position:relative;
 }
-#banner .content h1 {
-  /* border: 3px solid white; DON'T THINK I NEED THIS BORDER, BUT DEPENDS ON HOW IT LOOKS ONCE I MANAGE TO GET MY IMAGE TO WORK */
-  color: white;
+.content {
+  /* border: 3px solid white; */
+  color: whitesmoke;
   border-radius: 20px;
-  position: relative;
   top: 100px;
   width: auto;
-  margin: 0;
-  text-align: center;
+  margin: 5px;
+  text-align: left;
+  z-index: 2;
+  position:relative;
+  background-image: grey;
 }
 
 code {
@@ -63,6 +68,8 @@ code {
 
 .container {
   background-image: linear-gradient(orange, white);
+  z-index: -2;
+  position:relative;
 }
 
 .taskBreak {
