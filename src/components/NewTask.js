@@ -35,10 +35,10 @@ class NewTask extends React.Component {
         return (
             <div className="row new">
                 <div className="col-9">
-                    <input className="form-control" type="text" placeholder="New task..." value={this.state.taskDescription} onChange={this.taskDescriptionChanged}/>
+                    <input className="form-control" type="text" placeholder="New task..." value={this.state.taskDescription} onChange={this.taskDescriptionChanged} onSubmit={this.newTask}/>
                 </div>
                 <div className="col-2 button">
-                    <button type="button" className="btn btn-primary" onClick={this.newTask} onSubmit={this.newTask}><span className="fas fa-plus" aria-hidden="true"></span></button>
+                    <button type="submit" className="btn btn-primary" onClick={this.newTask}><span className="fas fa-plus" aria-hidden="true"></span></button>
 
                 </div>
             </div>
