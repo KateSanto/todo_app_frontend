@@ -8,11 +8,11 @@ The hosted version of the application is available here: https://katesanto.githu
 
 This app uses the following technology:
 
-* ReactJS
+* ReactJS (provides app boilerplate)
 * JavaScript (ES2015+)
 * CSS
-* Axios
-* ESLint
+* Axios (library for sending API requests)
+* ESLint (for JavaScript syntax errors)
 
 This app has been designed and built with mobile-first reponsive principles in mind.
 

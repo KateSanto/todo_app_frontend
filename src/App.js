@@ -4,6 +4,7 @@ import Header from './components/Header';
 import NewTask from './components/NewTask';
 import ActiveTasks from './components/ActiveTasks';
 import CompletedTasks from './components/CompletedTasks';
+const axios = require('axios');
 
 
 
@@ -12,6 +13,19 @@ class App extends React.Component {
   state = {
     tasks: []
   };
+
+  componentDidMount() {
+    axios.get('https://aaq6fhm1q6.execute-api.eu-west-2.amazonaws.com/dev/tasks')
+    .then((response) => {
+      // handle success
+      console.log(response)
+      this.setState({tasks: response.data.tasks});
+    })
+    .catch((error) => {
+      // handle error
+      console.log(error);
+    });
+  }
 
 
   addNewTask = (task) => {
@@ -54,13 +68,13 @@ class App extends React.Component {
 
   render() {
     let incompleteTasks = this.state.tasks.filter(function (task) {
-      if (task.completed === false) {
+      if (task.completed === "0") {
         return true
       }
     });
 
     let completedTasks = this.state.tasks.filter(function (task) {
-      if (task.completed === true) {
+      if (task.completed === "1") {
         return true
       }
     });
