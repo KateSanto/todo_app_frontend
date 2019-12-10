@@ -12,10 +12,9 @@ class NewTask extends React.Component {
 
     newTask = () => {
         const task = {
-            id: uuidv4(),
+            // id: uuidv4(),
             taskDescription: this.state.taskDescription,
-            completed: false
-            // creationDate: new Date
+            completed: "0"
         }
 
         this.props.addedTask(task);

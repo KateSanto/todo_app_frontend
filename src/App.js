@@ -16,34 +16,43 @@ class App extends React.Component {
 
   componentDidMount() {
     axios.get('https://aaq6fhm1q6.execute-api.eu-west-2.amazonaws.com/dev/tasks')
-    .then((response) => {
-      // handle success
-      console.log(response)
-      this.setState({tasks: response.data.tasks});
-    })
-    .catch((error) => {
-      // handle error
-      console.log(error);
-    });
+      .then((response) => {
+        // handle success
+        console.log(response)
+        this.setState({ tasks: response.data.tasks });
+      })
+      .catch((error) => {
+        // handle error
+        console.log(error);
+      });
   }
 
 
   addNewTask = (task) => {
-    let tasks = this.state.tasks;
-
-    tasks.push(task);
-
-    this.setState({ tasks });
+    axios.post('https://aaq6fhm1q6.execute-api.eu-west-2.amazonaws.com/dev/tasks', task)
+      .then((response) => {
+        let tasks = this.state.tasks;
+        task.id = response.id;
+        tasks.push(task);
+        this.setState({ tasks: tasks });
+      });
   }
 
   deleteTask = (taskId) => {
-    let tasks = this.state.tasks;
-    let tasksToKeep = tasks.filter(function (task) {
-      return task.id !== taskId;
+    axios.delete('https://aaq6fhm1q6.execute-api.eu-west-2.amazonaws.com/dev/tasks/{id}', taskId)
+      .then((response) => {
+        let tasks = this.state.tasks;
+        // task.id = response.id;
+        let tasksToKeep = tasks.filter(function (task) {
+          return task.id !== taskId;
+          this.setState({ tasks: tasksToKeep });
+        });
 
-    });
-    this.setState({ tasks: tasksToKeep })
+      })
+
   }
+
+
 
   markTaskAsCompleted = (taskId) => {
     const updatedTasks = this.state.tasks.map(function (task) {
@@ -81,19 +90,19 @@ class App extends React.Component {
 
     return (
       <div className="container container-styles">
-        
+
         <div className="banner">
-        <div className="content">
-              <h1>Get stuff done</h1>
-            </div>
+          <div className="content">
+            <h1>Get stuff done</h1>
           </div>
+        </div>
         <NewTask addedTask={this.addNewTask} />
         {incompleteTasks.length >= 1 &&
           <h2><Header headerDescription="Active tasks" /></h2>
         }
         <ActiveTasks tasks={incompleteTasks} deleteTaskFunc={this.deleteTask} markTaskAsCompleted={this.markTaskAsCompleted} />
         {completedTasks.length >= 1 &&
-          
+
           <h2><Header headerDescription="Completed tasks" /></h2>
         }
         <CompletedTasks tasks={completedTasks} markTaskAsActive={this.markTaskAsActive} />
