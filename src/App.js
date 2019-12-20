@@ -45,26 +45,29 @@ class App extends React.Component {
         // task.id = response.id;
         let tasksToKeep = tasks.filter(function (task) {
           return task.id !== taskId;
-          this.setState({ tasks: tasksToKeep });
         });
-
+        this.setState({ tasks: tasksToKeep });
       })
 
   }
 
 
 
-  markTaskAsCompleted = (taskId) => {
-    const updatedTasks = this.state.tasks.map(function (task) {
-      if (task.id === taskId) {
-        task.completed = true
-      }
-      return task
-    });
 
-    this.setState({ tasks: updatedTasks })
+  markTaskAsCompleted = (taskId) => {
+    axios.put('https://aaq6fhm1q6.execute-api.eu-west-2.amazonaws.com/dev/tasks/{id}', taskId)
+      .then((response) => {
+        const updatedTasks = this.state.tasks.map(function (task) {
+          if (task.id === taskId) {
+            task.completed = true
+          }
+          return task
+        });
+        this.setState({ tasks: updatedTasks })
+      })
   }
 
+  
   markTaskAsActive = (taskId) => {
     const activeTasks = this.state.tasks.map(function (task) {
       if (task.id === taskId) {
