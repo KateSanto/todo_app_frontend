@@ -39,7 +39,7 @@ class App extends React.Component {
   }
 
   deleteTask = (taskId) => {
-    axios.delete('https://aaq6fhm1q6.execute-api.eu-west-2.amazonaws.com/dev/tasks/`taskId`', taskId)
+    axios.delete(`https://aaq6fhm1q6.execute-api.eu-west-2.amazonaws.com/dev/tasks/${taskId}`, taskId)
       .then((response) => {
         let tasks = this.state.tasks;
         let tasksToKeep = tasks.filter(function (task) {
@@ -53,7 +53,7 @@ class App extends React.Component {
 
 
   markTaskAsCompleted = (taskId) => {
-    axios.put('https://aaq6fhm1q6.execute-api.eu-west-2.amazonaws.com/dev/tasks/`${taskId}`', taskId)
+    axios.put(`https://aaq6fhm1q6.execute-api.eu-west-2.amazonaws.com/dev/tasks/${taskId}`, taskId)
       .then((response) => {
         const updatedTasks = this.state.tasks.map(function (task) {
           if (task.id === taskId) {
@@ -67,13 +67,16 @@ class App extends React.Component {
 
 
   markTaskAsActive = (taskId) => {
-    const activeTasks = this.state.tasks.map(function (task) {
-      if (task.id === taskId) {
-        task.completed = false
-      }
-      return task
-    });
-    this.setState({ tasks: activeTasks })
+    axios.put(`https://aaq6fhm1q6.execute-api.eu-west-2.amazonaws.com/dev/tasks/${taskId}`, taskId)
+      .then((response) => {
+        const activeTasks = this.state.tasks.map(function (task) {
+          if (task.id === taskId) {
+            task.completed = false
+          }
+          return task
+        });
+        this.setState({ tasks: activeTasks })
+      })
   }
 
   render() {
