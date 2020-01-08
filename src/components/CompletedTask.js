@@ -3,8 +3,8 @@ import React from "react";
 class CompletedTask extends React.Component {
 
 
-  activateTask = () => {
-    this.props.markTaskAsActive(this.props.task.id)
+  updateTask = () => {
+    this.props.markTaskAsActive(this.props.task.id, "0")
   }
 
 
@@ -15,7 +15,7 @@ class CompletedTask extends React.Component {
           {this.props.task.taskDescription}
         </div>
         <div className="col-2 button">
-          <button type="button" className="btn btn-primary" onClick={this.activateTask}>Activate</button>
+          <button type="button" className="btn btn-primary" onClick={this.updateTask}>Activate</button>
         </div>
       </div>
     );

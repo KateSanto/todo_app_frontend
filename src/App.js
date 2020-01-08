@@ -52,30 +52,16 @@ class App extends React.Component {
 
 
 
-  markTaskAsCompleted = (taskId) => {
-    axios.put(`https://aaq6fhm1q6.execute-api.eu-west-2.amazonaws.com/dev/tasks/${taskId}`, taskId)
+  updateTask = (taskId, completed) => {
+    axios.put(`https://aaq6fhm1q6.execute-api.eu-west-2.amazonaws.com/dev/tasks/${taskId}?completed=${completed}`, taskId)
       .then((response) => {
         const updatedTasks = this.state.tasks.map(function (task) {
           if (task.id === taskId) {
-            task.completed = true
+            task.completed = completed
           }
           return task
         });
         this.setState({ tasks: updatedTasks })
-      })
-  }
-
-
-  markTaskAsActive = (taskId) => {
-    axios.put(`https://aaq6fhm1q6.execute-api.eu-west-2.amazonaws.com/dev/tasks/${taskId}`, taskId)
-      .then((response) => {
-        const activeTasks = this.state.tasks.map(function (task) {
-          if (task.id === taskId) {
-            task.completed = false
-          }
-          return task
-        });
-        this.setState({ tasks: activeTasks })
       })
   }
 
@@ -104,12 +90,12 @@ class App extends React.Component {
         {incompleteTasks.length >= 1 &&
           <h2><Header headerDescription="Active tasks" /></h2>
         }
-        <ActiveTasks tasks={incompleteTasks} deleteTaskFunc={this.deleteTask} markTaskAsCompleted={this.markTaskAsCompleted} />
+        <ActiveTasks tasks={incompleteTasks} deleteTaskFunc={this.deleteTask} markTaskAsCompleted={this.updateTask} />
         {completedTasks.length >= 1 &&
 
           <h2><Header headerDescription="Completed tasks" /></h2>
         }
-        <CompletedTasks tasks={completedTasks} markTaskAsActive={this.markTaskAsActive} />
+        <CompletedTasks tasks={completedTasks} markTaskAsActive={this.updateTask} />
       </div>
     );
   }
