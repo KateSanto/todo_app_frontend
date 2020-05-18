@@ -1,6 +1,6 @@
 # Get Stuff Done (to-do application) - Frontend
 
-This is the front end of a to-do application, built throughout the [Tech Returners](https://www.techreturners.com/) Your Journey Into Tech course. It integrates with a backend, available [here](ADD LINK TO BACKEND WORK HERE WHEN READY).
+This is the front end of a to-do application, built throughout the [Tech Returners](https://www.techreturners.com/) Your Journey Into Tech course. It integrates with a backend, available [here](https://github.com/KateSanto/todo_app_backend).
 
 The hosted version of the application is available here: https://katesanto.github.io/todo_app_frontend/
 
